@@ -1,0 +1,17 @@
+{
+  "name": "pumpup-ui-lab",
+  "version": "0.0.0",
+  "author": {
+    "name": "PumpUp",
+    "email": "devs@pumpup.co",
+    "url": "http://pumpup.co"
+  },
+  "private": true,
+  "homepage": "https://github.com/pumpupapp/pumpup-ui-lab",
+  "dependencies": {
+    "normalize.css": "~3.0.2",
+    "react": "~0.12.2",
+    "react-router": "~0.12.4",
+    "requirejs": "~2.1.16"
+  }
+}

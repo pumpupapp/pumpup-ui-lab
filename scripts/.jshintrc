@@ -1,0 +1,10 @@
+{
+  "extends": "../.jshintrc",
+
+  // Enforcing
+  "strict": false,
+
+  // Environments
+  "browser": false,
+  "node": true
+}

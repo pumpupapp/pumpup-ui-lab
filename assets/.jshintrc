@@ -1,0 +1,9 @@
+{
+  "extends": "../.jshintrc",
+
+  // Enforce
+  "globals": {
+    "define": false,
+    "require": false
+  }
+}
