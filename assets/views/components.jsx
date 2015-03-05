@@ -9,7 +9,7 @@ define(function(require) {
     propTypes: {
       components: React.PropTypes.array.isRequired,
     },
-    getDefaultProps: function () {
+    getDefaultProps: function() {
       return {
         components: ['avatar', 'bio', 'button']
       }
@@ -22,7 +22,11 @@ define(function(require) {
   })
 
   function componentItem(component) {
-    return <li key={component}><Link to='component' params={{name: component}}>{component}</Link></li>
+    return (
+      <li key={component}>
+        <Link to='component' params={{name: component}}>{component}</Link>
+      </li>
+    )
   }
 
   return ComponentsList

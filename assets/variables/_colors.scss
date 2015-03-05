@@ -1,0 +1,21 @@
+@import 'assets/variables/color-definitions';
+
+/**
+  These variables are for color aliases only
+  They ARE to be used in components.
+  If a variable doesn't exist for a use case,
+  alias the color definition from _colors-definitions.scss
+*/
+
+// Texts.
+$color-text: $black;
+$color-text--placeholder: $gray-medium;
+
+
+// Links.
+$color-link: $blue;
+$color-link--hover: $blue-dark;
+
+
+// Borders.
+$color-border--gray: $silver-dark;

@@ -1,0 +1,225 @@
+@import 'vendor/normalize.css/normalize.css';
+@import 'assets/variables/spaces';
+@import 'assets/variables/colors';
+@import 'assets/variables/font-sizes';
+@import 'assets/variables/typography';
+
+/**
+  This is a sort of "normalization" layer on top of normalize.css.
+  The purpose isn't to normalize cross-browser inconsistencies, but rather
+  to redo user agent styles based on the look we want to achieve. Hence the name.
+
+  The defaults chosen here are taken from and inspired by:
+    - http://github.com/inuitcss/generic.reset/blob/master/_generic.reset.scss
+    - http://github.com/inuitcss/generic.shared/blob/master/_generic.shared.scss
+    - https://github.com/suitcss/base/blob/master/lib/base.css
+ */
+
+
+// Start off with a box model that's easier to work with.
+// http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+// Adjust search inputs since normalize.css sets this explicitly.
+input[type=search] {
+  box-sizing: inherit;
+}
+
+
+
+// The base typographical elements common though out the app that cascade through all elements.
+// Also, positioning "relative" to the document element allows "faux" placeholder sidebars
+// to be used (during popup state) alongside a header that is positioned absolutely.
+html {
+  font: normal $font-size--body/normal $font-family;
+  color: $color-text;
+  color: #333;
+  position: relative;
+}
+
+
+
+// Give the anchor a nicer default color and remove the default underline
+// only to be revealed when the anchor is hovered/focused/activated.
+a {
+  color: $color-link;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: $color-link--hover;
+  text-decoration: underline;
+}
+
+
+
+// Content blocks should have consistent vertical rhythm.
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, address,
+dl, dd, ol, ul,
+form, fieldset, legend, figure,
+table, th, td, caption,
+hr {
+  padding: 0;
+  margin: 0 0 $space--block;
+}
+
+
+
+// Paragraphs should have more legible line-heights.
+p {
+  // line-height: $LineHeight-ratio;
+  line-height: 1.54;
+}
+
+
+
+// Indented blocks should have consistent indentations.
+ul, ol, dd {
+  padding-left: $space--indent;
+}
+
+
+
+// Give the horizontal rule a cleaner look.
+hr {
+  border: 0;
+  border-bottom: 1px solid $color-border--gray;
+}
+
+
+
+// Give a help cursor to elements that give extra info on `:hover`.
+abbr[title],
+dfn[title] {
+  cursor: help;
+}
+
+
+
+// Remove underlines from potentially troublesome elements.
+// The `u` element has been redefined in HTML5: html5doctor.com/u-element/
+u,
+ins {
+  text-decoration: none;
+}
+
+// Apply faux underline via `border-bottom`.
+ins {
+  border-bottom: 1px solid;
+}
+
+
+
+// Prevent bold text from changing line-height of it’s surrounding text.
+b,
+strong {
+  line-height: 0;
+}
+
+
+
+// So that `alt` text is visually offset if images don’t load.
+img {
+  font-style: italic;
+}
+
+
+
+// Certain elements have to be told not to go over their boundaries.
+img,
+input,
+button,
+textarea,
+select {
+  max-width: 100%;
+}
+
+// Images also need to be told to flex the height naturally.
+img {
+  height: auto;
+}
+
+
+
+// Set a consistent color for placeholders with a fallback.
+::placeholder {
+  color: $color-text--placeholder;
+}
+::-webkit-input-placeholder {
+  color: $color-text--placeholder;
+}
+
+
+
+// In order to be accessible, anything that can receive keyboard focus
+// should also have a visual cue of a "focused" state.
+:focus {
+  outline: 1px dotted;
+  outline-offset: 0;
+}
+
+
+
+// Even though a legend is a "block" display, it's width is collapsed.
+legend {
+  width: 100%;
+}
+
+
+
+// We only need the semantics of the fieldset, so remove the styles.
+fieldset {
+  border: 0;
+}
+
+
+
+// Allow font families and sizes to cascade into form elements.
+input,
+button,
+textarea {
+  font: inherit;
+}
+
+input,
+form,
+textarea,
+fieldset,
+button {
+  font-size: inherit;
+}
+
+
+
+// Fix Firefox's button padding.
+button::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+
+
+// Textareas should not be allowed to be sized beyond their width's bounds.
+textarea {
+  resize: vertical;
+  overflow: auto;
+}
+
+
+
+// Make table layouts behave more predictably
+// http://css-tricks.com/fixing-tables-long-strings/
+table {
+  table-layout: fixed;
+}

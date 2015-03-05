@@ -1,0 +1,14 @@
+// The base spacing unit is what all other spacing units are based on.
+$space: 20px;
+
+// The vertical rhythm used for typographical and content blocks.
+$space--block: $space;
+
+// The vertical rhythm used for sectioning blocks.
+$space--section: $space--block * 2;
+
+// The indentation spacing for content blocks with indented children. Eg `ul`.
+$space--indent: $space--block * 2;
+
+// The inset spacing for boxed elements. Eg bordered content block or `input`.
+$space--inset: $space / 2;

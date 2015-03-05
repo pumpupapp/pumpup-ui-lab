@@ -1,0 +1,37 @@
+@import 'assets/variables/font-size-definitions';
+
+/**
+  These variables are for font-size aliases only
+  They ARE to be used in components.
+  If a variable doesn't exist for a use case,
+  alias the font-size definition from _font-size-definitions.scss
+*/
+
+// Headings.
+$font-size--heading-biggest  : $font-size--giga;
+$font-size--heading-bigger   : $font-size--mega;
+$font-size--heading-big      : $font-size--kilo;
+$font-size--heading          : $font-size--alpha;
+$font-size--heading-small    : $font-size--beta;
+$font-size--heading-smaller  : $font-size--gamma;
+$font-size--heading-smallest : $font-size--delta;
+$font-size--heading-tiny     : $font-size--epsilon;
+$font-size--heading-tinier   : $font-size--zeta;
+$font-size--heading-tiniest  : $font-size--base;
+
+
+// Body copy.
+$font-size--body             : $font-size--base;
+$font-size--body-small       : $font-size--milli;
+
+
+// Buttons.
+$font-size--button-big       : $font-size--delta;
+$font-size--button           : $font-size--epsilon;
+$font-size--button-small     : $font-size--base;
+
+
+// Inputs.
+$font-size--input-big        : $font-size--gamma;
+$font-size--input            : $font-size--delta;
+$font-size--input-small      : $font-size--zeta;

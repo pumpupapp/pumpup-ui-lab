@@ -13,6 +13,8 @@ var server = connect()
 server.use(jsx(app.root))
 server.use(sass({
   src      : app.root,
+  root     : app.root,
+  debug    : true,
   response : true,
 }));
 server.use(serveStatic(app.root))

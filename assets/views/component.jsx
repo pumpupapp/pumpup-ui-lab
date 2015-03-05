@@ -33,7 +33,7 @@ define(function(require) {
 
   var ComponentPreview = React.createClass({
     mixins: [Router.State],
-    componentWillMount: function () {
+    componentWillMount: function() {
       var params = this.getParams()
       this.styleSheets = addComponentStyleSheets(params.name)
       addComponentScripts(params.name)
