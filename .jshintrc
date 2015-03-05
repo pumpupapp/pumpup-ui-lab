@@ -17,7 +17,7 @@
   "noarg": true,
   "noempty": true,
   "nonbsp": true,
-  "quotmark": "single",
+  // "quotmark": "single", temporarily commented out because react.transform doesnt support it
   "strict": true,
   "undef": true,
   "unused": "vars",
