@@ -33,23 +33,23 @@ define(function(require) {
 
   var ComponentPreview = React.createClass({
     mixins: [Router.State],
-    componentWillMount: function() {
+    componentWillMount() {
       var params = this.getParams()
       this.styleSheets = addComponentStyleSheets(params.name)
       addComponentScripts(params.name)
     },
-    componentDidMount: function() {
+    componentDidMount() {
       var params = this.getParams()
       var node   = this.refs.demo.getDOMNode()
-      addComponentScripts(params.name, function(Component, ComponentDemo) {
+      addComponentScripts(params.name, (Component, ComponentDemo) => {
         React.render(<ComponentDemo />, node)
       })
     },
-    componentWillUnmount: function() {
+    componentWillUnmount() {
       removeStyleSheets(this.styleSheets)
       delete this.styleSheets
     },
-    render: function() {
+    render() {
       var params = this.getParams()
       return (
         <div>

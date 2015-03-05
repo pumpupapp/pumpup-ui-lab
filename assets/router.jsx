@@ -7,7 +7,7 @@ define(function(require) {
 
   var routes = require('./routes')
 
-  Router.run(routes, function(Handler, state) {
+  Router.run(routes, (Handler, state) => {
     var routesDepth = state.routes.length
     if (routesDepth) {
       var deepestRoute = state.routes[routesDepth - 1]

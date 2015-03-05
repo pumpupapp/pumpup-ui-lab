@@ -7,7 +7,7 @@ define(function(require) {
   var Link         = require('react-router').Link
 
   var Logo = React.createClass({
-    render: function() {
+    render() {
       var containerStyles = {
         display: 'inline-block',
         verticalAlign: 'top',
@@ -29,7 +29,7 @@ define(function(require) {
   })
 
   var App = React.createClass({
-    render: function() {
+    render() {
       return (
         <div>
           <header>

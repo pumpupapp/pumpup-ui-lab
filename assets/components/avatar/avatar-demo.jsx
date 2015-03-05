@@ -7,7 +7,7 @@ define(function(require) {
   var Avatar = require('./avatar')
 
   var AvatarDemo = React.createClass({
-    render: function() {
+    render() {
       return (
         <div>
           <Avatar></Avatar>

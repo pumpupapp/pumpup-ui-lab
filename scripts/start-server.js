@@ -10,7 +10,10 @@ var app = require('../app')
 
 debug('Starting server at http://localhost:%s', app.port)
 var server = connect()
-server.use(jsx(app.root))
+server.use(jsx(app.root, {
+  sourceMap : true,
+  harmony   : true,
+}))
 server.use(sass({
   src      : app.root,
   root     : app.root,

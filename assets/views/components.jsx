@@ -9,12 +9,12 @@ define(function(require) {
     propTypes: {
       components: React.PropTypes.array.isRequired,
     },
-    getDefaultProps: function() {
+    getDefaultProps() {
       return {
         components: ['avatar', 'bio', 'button']
       }
     },
-    render: function() {
+    render() {
       return (
         <ul>{this.props.components.map(componentItem)}</ul>
       )

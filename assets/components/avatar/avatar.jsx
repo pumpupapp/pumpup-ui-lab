@@ -10,19 +10,19 @@ define(function(require) {
       size : React.PropTypes.string,
       src  : React.PropTypes.string.isRequired
     },
-    getDefaultProps: function() {
+    getDefaultProps() {
       return {
         size : 'large',
         src  : 'https://s3.amazonaws.com/uifaces/faces/twitter/BillSKenney/128.jpg',
       }
     },
-    isTiny: function() {
-      return this.props.size == 'tiny'
+    isTiny() {
+      return this.props.size === 'tiny'
     },
-    getDimension: function() {
+    getDimension() {
       return this.isTiny() ? 24: 128
     },
-    render: function() {
+    render() {
       var dimension      = this.getDimension()
       var src            = this.props.src
       var classNameImage = classSet({
