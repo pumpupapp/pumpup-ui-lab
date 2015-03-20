@@ -11,23 +11,38 @@ define(function(require) {
     },
     getDefaultProps() {
       return {
-        components: ['avatar', 'bio', 'button']
+        components: ['avatar', 'header', 'button']
       }
     },
     render() {
       return (
-        <ul>{this.props.components.map(componentItem)}</ul>
+        <ul className="lab-components">
+          {this.props.components.map((component, index) =>
+            <ComponentsList.Item key={index}>
+              {component}
+            </ComponentsList.Item>
+          )}
+        </ul>
       )
     }
   })
 
-  function componentItem(component) {
-    return (
-      <li key={component}>
-        <Link to='component' params={{name: component}}>{component}</Link>
-      </li>
-    )
-  }
+  ComponentsList.Item = React.createClass({
+    render() {
+      var component = this.props.children
+      return (
+        <li>
+          <Link
+            to='component'
+            params={{name: component}}
+            className="lab-components_item"
+          >
+            {component}
+          </Link>
+        </li>
+      )
+    }
+  })
 
   return ComponentsList
 })

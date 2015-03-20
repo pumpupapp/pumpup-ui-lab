@@ -1,0 +1,29 @@
+@import 'assets/variables/font-sizes';
+
+h1 {
+  font-size: $font-size--heading;
+}
+
+h2 {
+  font-size: $font-size--heading-small;
+}
+
+h3 {
+  font-size: $font-size--heading-smaller;
+}
+
+h4 {
+  font-size: $font-size--heading-smallest;
+}
+
+h5 {
+  font-size: $font-size--heading-tiny;
+}
+
+h6 {
+  font-size: $font-size--heading-tinier;
+}
+
+p {
+  font-size: $font-size--base;
+}

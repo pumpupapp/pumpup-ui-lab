@@ -5,21 +5,22 @@
 */
 
 // Extra large to be used on mastheads, etc.
-$font-size--giga    : 48px;
-$font-size--mega    : 40px;
-$font-size--kilo    : 32px;
+$font-size--giga    : 60px;
+$font-size--mega    : 48px;
+$font-size--kilo    : 40px;
 
 // Main font sizes for body text headings.
-$font-size--alpha   : 28px;
-$font-size--beta    : 24px;
-$font-size--gamma   : 20px;
-$font-size--delta   : 18px;
-$font-size--epsilon : 16px;
-$font-size--zeta    : 14px;
+$font-size--alpha   : 36px;
+$font-size--beta    : 32px;
+$font-size--gamma   : 28px;
+$font-size--delta   : 24px;
+$font-size--epsilon : 20px;
+$font-size--zeta    : 18px;
 
 // The base size for body text.
-$font-size--base    : 13px;
+$font-size--base    : 16px;
 
 // Smaller script for foot notes, legal, etc.
-$font-size--milli   : 12px;
-$font-size--micro   : 10px;
+$font-size--milli   : 14px;
+$font-size--micro   : 13px;
+$font-size--nano    : 11px;

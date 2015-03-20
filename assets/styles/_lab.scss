@@ -1,0 +1,59 @@
+@import 'assets/components/header/header';
+
+
+html,
+body,
+body > .lab-root {
+  height: 100%;
+}
+
+
+
+.add--scrollable {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+
+.lab-body {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+
+
+.lab-list {
+  margin: 0;
+  padding: 0;
+}
+
+  .lab-list_item {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: -1px;
+  }
+  .lab-list_item:hover,
+  .lab-list_item:active,
+  .lab-list_item:focus {
+    z-index: 1;
+    border-color: red;
+    text-decoration: none;
+  }
+
+
+
+.lab-components {
+  @extend .lab-list;
+}
+
+  .lab-components_item {
+    @extend .lab-list_item;
+  }

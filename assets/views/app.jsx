@@ -4,38 +4,38 @@ define(function(require) {
 
   var React        = require('react')
   var RouteHandler = require('react-router').RouteHandler
-  var Link         = require('react-router').Link
 
-  var Logo = React.createClass({
-    render() {
-      var containerStyles = {
-        display: 'inline-block',
-        verticalAlign: 'top',
-      }
-      var imageStyles = {
-        display: 'block',
-      }
-      return (
-        <span style={containerStyles}>
-          <img
-            style={imageStyles}
-            src='/assets/graphics/logo.png'
-            alt='PumpUp Lab'
-            width='225' height='35'
-          />
-        </span>
-      )
-    }
-  })
+  var Header       = require('../components/header/header')
 
   var App = React.createClass({
     render() {
       return (
-        <div>
-          <header>
-            <h1><Link to='app'><Logo /></Link></h1>
-          </header>
-          <RouteHandler />
+        <div className="lab-root">
+          <Header title="logo" />
+          <div className="lab-body add--scrollable">
+            <RouteHandler />
+            {/*<h1>heading 01</h1>
+            <h2>heading 02</h2>
+            <h3>heading 03</h3>
+            <h4>heading 04</h4>
+            <h5>heading 05</h5>
+            <h6>heading 06</h6>
+            <p>body paragraph</p>
+            <h1>heading 01</h1>
+            <h2>heading 02</h2>
+            <h3>heading 03</h3>
+            <h4>heading 04</h4>
+            <h5>heading 05</h5>
+            <h6>heading 06</h6>
+            <p>body paragraph</p>
+            <h1>heading 01</h1>
+            <h2>heading 02</h2>
+            <h3>heading 03</h3>
+            <h4>heading 04</h4>
+            <h5>heading 05</h5>
+            <h6>heading 06</h6>
+            <p>body paragraph</p>*/}
+          </div>
           <footer>
             <div>&copy; 2015</div>
           </footer>
