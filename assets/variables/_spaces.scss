@@ -4,6 +4,9 @@ $space: 20px;
 // The vertical rhythm used for typographical and content blocks.
 $space--block: $space;
 
+// The vertical and horizontal rhythm used for content frames.
+$space--frame: $space;
+
 // The vertical rhythm used for sectioning blocks.
 $space--section: $space--block * 2;
 

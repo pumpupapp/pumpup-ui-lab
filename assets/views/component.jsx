@@ -11,8 +11,8 @@ define(function(require) {
     return [component, componentDemo]
   }
 
-  function addComponentScripts(name, callback) {
-    require(['../components/' + name + '/' + name, '../components/' + name + '/' + name + '-demo'], callback)
+  function addComponentScripts(name, callback, errback) {
+    require(['../components/' + name + '/' + name, '../components/' + name + '/' + name + '-demo'], callback, errback)
   }
 
   function addStyleSheet(href) {
@@ -43,6 +43,9 @@ define(function(require) {
       var node   = this.refs.demo.getDOMNode()
       addComponentScripts(params.name, (Component, ComponentDemo) => {
         React.render(<ComponentDemo />, node)
+      }, (err) => {
+        var message = 'Error loading ' + JSON.stringify(err.requireModules, null, '  ')
+        this.refs.demo.getDOMNode().innerHTML = message
       })
     },
     componentWillUnmount() {
@@ -52,7 +55,7 @@ define(function(require) {
     render() {
       var params = this.getParams()
       return (
-        <div>
+        <div className='lab-content'>
           <h2>Component: {params.name}</h2>
           <div className='component-demo' ref='demo'>Loading...</div>
         </div>

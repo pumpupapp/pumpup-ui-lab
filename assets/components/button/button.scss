@@ -1,8 +1,11 @@
+@import 'assets/variables/colors';
+@import 'assets/variables/spaces';
+
 .button {
   border: 3px;
-  background: #0089ec;
-  color: white;
-  padding: 10px 15px;
+  background: $color-button;
+  color: $color-text--invert;
+  padding: 10px $space--frame;
 }
 
 .button-round {

@@ -1,3 +1,6 @@
+@import 'assets/variables/colors';
+@import 'assets/variables/spaces';
+
 .header {
   text-align: center;
   height: 50px;
@@ -6,25 +9,32 @@
   left: 0;
   top: 0;
   right: 0;
-  background: #fff;
+  background: $color-background--brand;
+  color: $color-text--invert;
   z-index: 100000;
 }
 
   .header_title {
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
     padding: 0 10px;
     line-height: 1;
   }
 
   .header_button {
-    cursor: pointer;
     z-index: 10;
-    width: 20%;
     height: 50px;
-    padding: 15px 0;
+    padding: 15px $space--frame;
     position: absolute;
     top: 0;
+    color: $color-text--invert;
+  }
+  .header_button:hover,
+  .header_button:focus,
+  .header_button:active {
+    cursor: pointer;
+    color: $color-text--invert;
+    text-decoration: none;
   }
   .header_button-left {
     left: 0;
