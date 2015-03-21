@@ -11,7 +11,7 @@ define(function(require) {
     },
     getDefaultProps() {
       return {
-        components: ['avatar', 'header', 'button']
+        components: ['avatar', 'header', 'button', 'title']
       }
     },
     render() {

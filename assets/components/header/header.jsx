@@ -57,7 +57,7 @@ define(function(require) {
     }
   })
 
-  var Title = React.createClass({
+  var AppTitle = React.createClass({
     render() {
       return (
         <h1 className='header_title'>{this.props.children}</h1>
@@ -67,13 +67,34 @@ define(function(require) {
 
   var Header = React.createClass({
     mixins: [RouteEvents],
-    propTypes: {
-      title: React.PropTypes.string.isRequired,
-    },
     getInitialState() {
       return {
-        isLeftButtonVisible: false,
+        title               : null,
+        isLeftButtonVisible : false,
       }
+    },
+    render() {
+
+      var title               = this.state.title
+      var isLeftButtonVisible = this.state.isLeftButtonVisible
+
+      var child = title || <Logo />
+
+      return (
+        <header className='header'>
+          <LeftButton isVisible={isLeftButtonVisible} />
+          <AppTitle>{child}</AppTitle>
+        </header>
+      )
+    },
+    componentWillMount() {
+      if (window.pumpup.header) {
+        throw new Error(`There can only be one instance of "${this.constructor.displayName}"`)
+      }
+      window.pumpup.header = this
+    },
+    componentWillUnmount() {
+      delete window.pumpup.header
     },
     onPathChange(path) {
       if (path === '/') {
@@ -93,20 +114,6 @@ define(function(require) {
         isLeftButtonVisible: true
       })
     },
-    render() {
-
-      var title               = this.props.title
-      var isLeftButtonVisible = this.state.isLeftButtonVisible
-
-      var child = title === 'logo' ? <Logo /> : null
-
-      return (
-        <header className='header'>
-          <LeftButton isVisible={isLeftButtonVisible} />
-          <Title>{child}</Title>
-        </header>
-      )
-    }
   })
 
   return Header

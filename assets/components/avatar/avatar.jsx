@@ -16,12 +16,6 @@ define(function(require) {
         src  : 'https://s3.amazonaws.com/uifaces/faces/twitter/BillSKenney/128.jpg',
       }
     },
-    isTiny() {
-      return this.props.size === 'tiny'
-    },
-    getDimension() {
-      return this.isTiny() ? 24: 128
-    },
     render() {
       var dimension      = this.getDimension()
       var src            = this.props.src
@@ -34,6 +28,12 @@ define(function(require) {
           <img className={classNameImage} src={src} width={dimension} height={dimension} />
         </div>
       )
+    },
+    isTiny() {
+      return this.props.size === 'tiny'
+    },
+    getDimension() {
+      return this.isTiny() ? 24: 128
     },
   })
 

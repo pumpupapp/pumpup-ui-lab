@@ -5,6 +5,8 @@ define(function(require) {
   var React  = require('react')
   var Router = require('react-router')
 
+  var AppTitle = require('../mixins/app-title')
+
   function addComponentStyleSheets(name) {
     var component = addStyleSheet('assets/components/' + name + '/' + name + '.css')
     var componentDemo = addStyleSheet('assets/components/' + name + '/' + name + '-demo.css')
@@ -32,7 +34,14 @@ define(function(require) {
   }
 
   var ComponentPreview = React.createClass({
-    mixins: [Router.State],
+    mixins: [Router.State, AppTitle],
+    render() {
+      return (
+        <div className='lab-content'>
+          <div className='component-demo' ref='demo'>Loading...</div>
+        </div>
+      )
+    },
     componentWillMount() {
       var params = this.getParams()
       this.styleSheets = addComponentStyleSheets(params.name)
@@ -52,15 +61,10 @@ define(function(require) {
       removeStyleSheets(this.styleSheets)
       delete this.styleSheets
     },
-    render() {
+    getTitle() {
       var params = this.getParams()
-      return (
-        <div className='lab-content'>
-          <h2>Component: {params.name}</h2>
-          <div className='component-demo' ref='demo'>Loading...</div>
-        </div>
-      )
-    }
+      return `Component: ${params.name}`
+    },
   })
 
   return ComponentPreview
