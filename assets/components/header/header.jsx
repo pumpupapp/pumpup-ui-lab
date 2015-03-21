@@ -2,10 +2,12 @@ define(function(require) {
 
   'use strict';
 
-  var React        = require('react')
-  var Link         = require('react-router').Link
-  var History      = require('react-router').History
-  var HashLocation = require('react-router').HashLocation
+  var React              = require('react')
+  var CSSTransitionGroup = require('react').addons.CSSTransitionGroup
+  var Link               = require('react-router').Link
+  var History            = require('react-router').History
+  var HashLocation       = require('react-router').HashLocation
+
 
   var Logo = React.createClass({
     render() {
@@ -48,13 +50,21 @@ define(function(require) {
     },
     render() {
       var isVisible = this.props.isVisible
-      if (!isVisible) {
-        return null
-      }
-      return (
-        <a className='header_button header_button-left' onClick={History.back}>Back</a>
+      var onClick   = isVisible ? History.back : () => {}
+      var button    = !isVisible ? null : (
+        <a
+          onClick={onClick}
+          key='back-button'
+          className='header_button header_button-left'>
+          Back
+        </a>
       )
-    }
+      return (
+        <CSSTransitionGroup transitionName='fade-in-from-right' transitionAppear>
+          {button}
+        </CSSTransitionGroup>
+      )
+    },
   })
 
   var AppTitle = React.createClass({
