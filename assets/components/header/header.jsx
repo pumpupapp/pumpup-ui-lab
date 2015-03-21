@@ -4,7 +4,6 @@ define(function(require) {
 
   var React              = require('react')
   var CSSTransitionGroup = require('react').addons.CSSTransitionGroup
-  var Link               = require('react-router').Link
   var History            = require('react-router').History
   var HashLocation       = require('react-router').HashLocation
 
@@ -24,7 +23,8 @@ define(function(require) {
             style={imageStyles}
             src='/assets/graphics/logo.png'
             alt='PumpUp Lab'
-            width='225' height='35'
+            width='180'
+            height='28'
           />
         </span>
       )
@@ -60,7 +60,7 @@ define(function(require) {
         </a>
       )
       return (
-        <CSSTransitionGroup transitionName='fade-in-from-right' transitionAppear>
+        <CSSTransitionGroup transitionName='fade-in-from-right'>
           {button}
         </CSSTransitionGroup>
       )
@@ -69,8 +69,20 @@ define(function(require) {
 
   var AppTitle = React.createClass({
     render() {
+      var children = this.props.children
+      var title = null
+      var logo = null
+      if (children) {
+        title = <h1 className='header_title' key='header-title'>{children}</h1>
+      }
+      else {
+        logo = <h1 className='header_title header_title--logo' key='header-logo'><Logo /></h1>
+      }
       return (
-        <h1 className='header_title'>{this.props.children}</h1>
+        <CSSTransitionGroup transitionName='fade-in-from-right'>
+          {logo}
+          {title}
+        </CSSTransitionGroup>
       )
     }
   })
@@ -88,12 +100,10 @@ define(function(require) {
       var title               = this.state.title
       var isLeftButtonVisible = this.state.isLeftButtonVisible
 
-      var child = title || <Logo />
-
       return (
         <header className='header'>
           <LeftButton isVisible={isLeftButtonVisible} />
-          <AppTitle>{child}</AppTitle>
+          <AppTitle>{title}</AppTitle>
         </header>
       )
     },

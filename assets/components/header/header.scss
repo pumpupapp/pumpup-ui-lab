@@ -23,6 +23,13 @@
     line-height: 1;
     font-size: $font-size--heading-smallest;
     font-weight: 200;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    top: 13px;
+  }
+
+  .header_title--logo {
   }
 
   .header_button {
