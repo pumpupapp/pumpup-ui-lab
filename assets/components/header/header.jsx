@@ -76,7 +76,11 @@ define(function(require) {
         title = <h1 className='header_title' key='header-title'>{children}</h1>
       }
       else {
-        logo = <h1 className='header_title header_title--logo' key='header-logo'><Logo /></h1>
+        logo = (
+          <h1 className='header_title header_title--logo' key='header-logo'>
+            <Logo />
+          </h1>
+        )
       }
       return (
         <CSSTransitionGroup transitionName='fade-in-from-right'>

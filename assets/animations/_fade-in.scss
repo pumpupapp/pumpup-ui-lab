@@ -1,18 +1,18 @@
 .fade-in-from-right-enter {
   opacity: 0;
-  transform: translateX(10px);
+  transform: translateX(40px);
 }
 .fade-in-from-right-enter-active {
-  transition: 0.25s ease-out;
+  transition: 0.35s cubic-bezier(.29,.41,.65,.98);
   transform: translateX(0);
   opacity: 1;
 }
 
 .fade-in-from-right-leave {
-  transition: 0.25s ease-out;
+  transition: 0.35s cubic-bezier(.29,.41,.65,.98);
   opacity: 1;
 }
 .fade-in-from-right-leave-active {
   opacity: 0;
-  transform: translateX(10px);
+  transform: translateX(40px);
 }
