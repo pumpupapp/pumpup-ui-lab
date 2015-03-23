@@ -14,6 +14,8 @@ define(function(require) {
           <br />
           <br />
           <Button round-corners full-width>Rounded and full width 8D</Button>
+          <br />
+          <Button round-corners full-width is-active>Rounded, full width, and active</Button>
         </div>
       )
     }

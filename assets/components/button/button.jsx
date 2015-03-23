@@ -12,9 +12,10 @@ define(function(require) {
     },
     render() {
       var className = classSet({
-        'button'       : true,
-        'button-round' : this.props['round-corners'],
-        'button-block' : this.props['full-width'],
+        'button'        : true,
+        'button-round'  : this.props['round-corners'],
+        'button-block'  : this.props['full-width'],
+        'button-active' : this.props['is-active'],
       })
       return (
         <button className={className}>{this.props.children}</button>
