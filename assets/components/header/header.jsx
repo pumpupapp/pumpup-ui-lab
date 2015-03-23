@@ -6,6 +6,7 @@ define(function(require) {
   var CSSTransitionGroup = require('react').addons.CSSTransitionGroup
   var History            = require('react-router').History
   var HashLocation       = require('react-router').HashLocation
+  var classNames         = require('classnames')
 
 
   var Logo = React.createClass({
@@ -45,24 +46,13 @@ define(function(require) {
   }
 
   var LeftButton = React.createClass({
-    propTypes: {
-      isVisible: React.PropTypes.bool.isRequired
-    },
     render() {
-      var isVisible = this.props.isVisible
-      var onClick   = isVisible ? History.back : () => {}
-      var button    = !isVisible ? null : (
+      return (
         <a
-          onClick={onClick}
-          key='back-button'
+          onClick={History.back}
           className='header_button header_button-left'>
           Back
         </a>
-      )
-      return (
-        <CSSTransitionGroup transitionName='fade-in-from-right'>
-          {button}
-        </CSSTransitionGroup>
       )
     },
   })
@@ -70,23 +60,15 @@ define(function(require) {
   var AppTitle = React.createClass({
     render() {
       var children = this.props.children
-      var title = null
-      var logo = null
-      if (children) {
-        title = <h1 className='header_title' key='header-title'>{children}</h1>
-      }
-      else {
-        logo = (
-          <h1 className='header_title header_title--logo' key='header-logo'>
-            <Logo />
-          </h1>
-        )
+      var className = classNames({
+        'header_title'       : true,
+        'header_title--logo' : !children
+      })
+      if (!children) {
+        children = <Logo />
       }
       return (
-        <CSSTransitionGroup transitionName='fade-in-from-right'>
-          {logo}
-          {title}
-        </CSSTransitionGroup>
+        <h1 className={className}>{children}</h1>
       )
     }
   })
@@ -106,8 +88,12 @@ define(function(require) {
 
       return (
         <header className='header'>
-          <LeftButton isVisible={isLeftButtonVisible} />
-          <AppTitle>{title}</AppTitle>
+          <CSSTransitionGroup transitionName='fade-in-from-right'>
+            {isLeftButtonVisible ? <LeftButton key='app-left-button' /> : null}
+          </CSSTransitionGroup>
+          <CSSTransitionGroup transitionName='fade-in-from-right'>
+            <AppTitle key={title ? 'app-title' : 'app-logo'}>{title}</AppTitle>
+          </CSSTransitionGroup>
         </header>
       )
     },

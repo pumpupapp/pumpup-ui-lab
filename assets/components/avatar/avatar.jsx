@@ -2,8 +2,8 @@ define(function(require) {
 
   'use strict';
 
-  var React    = require('react')
-  var classSet = React.addons.classSet
+  var React      = require('react')
+  var classNames = require('classnames')
 
   var Avatar = React.createClass({
     propTypes: {
@@ -19,7 +19,7 @@ define(function(require) {
     render() {
       var dimension      = this.getDimension()
       var src            = this.props.src
-      var classNameImage = classSet({
+      var classNameImage = classNames({
         'avatar-photo'       : true,
         'avatar-photo--tiny' : this.isTiny()
       })

@@ -2,8 +2,8 @@ define(function(require) {
 
   'use strict';
 
-  var React = require('react')
-  var classSet = React.addons.classSet
+  var React      = require('react')
+  var classNames = require('classnames')
 
   var Button = React.createClass({
     propTypes: {
@@ -11,7 +11,7 @@ define(function(require) {
       'full-width': React.PropTypes.bool,
     },
     render() {
-      var className = classSet({
+      var className = classNames({
         'button'        : true,
         'button-round'  : this.props['round-corners'],
         'button-block'  : this.props['full-width'],
