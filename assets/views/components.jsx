@@ -2,24 +2,47 @@ define(function(require) {
 
   'use strict';
 
-  var React = require('react')
-  var Link  = require('react-router').Link
+  var React              = require('react')
+  var Link               = require('react-router').Link
+  var Backbone           = require('backbone')
+  // var BackboneReactMixin = require('backbone-react-component')
+
+  var components = window.components = new Backbone.Collection([
+    { name: 'avatar', },
+    { name: 'header', },
+    { name: 'button', },
+    { name: 'title', },
+  ])
+  console.log(components)
+
+  var BackboneReactMixin = {
+    componentDidMount() {
+      var model = this.state.model
+      if (model) {
+        model.on('all', (change, model, collection, details) => {
+          console.debug('Change: %s', change)
+          console.debug('Changed model: %o', model)
+          console.debug('Full collection: %o', collection)
+          console.debug('Change details: %o', details)
+          this.setState({ model: collection })
+        })
+      }
+    },
+  }
 
   var ComponentsList = React.createClass({
-    propTypes: {
-      components: React.PropTypes.array.isRequired,
-    },
-    getDefaultProps() {
+    mixins: [BackboneReactMixin],
+    getInitialState() {
       return {
-        components: ['avatar', 'header', 'button', 'title']
+        model: components,
       }
     },
     render() {
       return (
         <ul className="lab-components">
-          {this.props.components.map((component, index) =>
+          {this.state.model.map((component, index) =>
             <ComponentsList.Item key={index}>
-              {component}
+              {component.get('name')}
             </ComponentsList.Item>
           )}
         </ul>

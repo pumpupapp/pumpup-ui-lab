@@ -1,3 +1,7 @@
+/**
+  Generic spacers.
+ */
+
 // The base spacing unit is what all other spacing units are based on.
 $space: 20px;
 
@@ -15,3 +19,17 @@ $space--indent: $space--block * 2;
 
 // The inset spacing for boxed elements. Eg bordered content block or `input`.
 $space--inset: $space / 2;
+
+
+/**
+  Specific spacers.
+ */
+
+$height--status-bar    : 20px;
+$height--nav-bar       : 44px;
+$height--tab-bar       : 50px;
+
+$min-height--list-item : 44px;
+
+$inset--nav-bar-button : 16px;
+$inset--list-item      : 15px;

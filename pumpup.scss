@@ -1,3 +1,11 @@
 @import 'assets/styles/restart';
 @import 'assets/styles/typography';
 @import 'assets/styles/lab';
+
+@import 'assets/components/app/app';
+@import 'assets/components/nav-bar/nav-bar';
+@import 'assets/components/tab-bar/tab-bar';
+
+$font-size--button: 34px;
+
+$font-weight--button: 200;

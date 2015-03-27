@@ -1,6 +1,6 @@
 .fade-in-from-right-enter {
   opacity: 0;
-  transform: translateX(40px);
+  transform: translateX(20px);
 }
 .fade-in-from-right-enter-active {
   transition: 0.35s cubic-bezier(.29,.41,.65,.98);
@@ -14,5 +14,5 @@
 }
 .fade-in-from-right-leave-active {
   opacity: 0;
-  transform: translateX(40px);
+  transform: translateX(20px);
 }

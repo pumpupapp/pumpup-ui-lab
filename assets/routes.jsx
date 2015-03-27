@@ -6,7 +6,7 @@ define(function(require) {
   var Route        = require('react-router').Route
   var DefaultRoute = require('react-router').DefaultRoute
 
-  var App        = require('./views/app')
+  var App        = require('./components/app/app')
   var Components = require('./views/components')
   var Component  = require('./views/component')
 

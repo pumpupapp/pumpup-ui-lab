@@ -20,11 +20,11 @@ define(function(require) {
       var dimension      = this.getDimension()
       var src            = this.props.src
       var classNameImage = classNames({
-        'avatar-photo'       : true,
-        'avatar-photo--tiny' : this.isTiny()
+        'avatar_photo'       : true,
+        'avatar_photo--tiny' : this.isTiny()
       })
       return (
-        <div className="avatar">
+        <div className='avatar'>
           <img className={classNameImage} src={src} width={dimension} height={dimension} />
         </div>
       )

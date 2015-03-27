@@ -1,0 +1,21 @@
+@import 'assets/variables/spaces';
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+  .app_nav {
+    // height: $height--nav-bar;
+  }
+
+  .app_body {
+    flex: 1;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .app_tabs {
+    // height: $height--tab-bar;
+  }

@@ -8,16 +8,16 @@
   padding: 10px $space--frame;
 }
 
-.button-round {
+.button--round {
   border-radius: 5px;
 }
 
-.button-block {
+.button--block {
   display: block;
   width: 100%;
 }
 
-.button-active {
+.button--active {
   background: transparent;
   color: $color-button;
 }

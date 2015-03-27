@@ -14,6 +14,8 @@
     "react-router": "~0.13.1",
     "requirejs": "~2.1.16",
     "backbone-react-component": "~0.8.0",
-    "classnames": "~1.1.4"
+    "classnames": "~1.1.4",
+    "underscore": "~1.8.2",
+    "jquery": "~2.1.3"
   }
 }

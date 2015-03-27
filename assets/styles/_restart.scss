@@ -46,6 +46,15 @@ html {
 
 
 
+// Force the viewport to be restricted to 100% of the document.
+// This makes it easier to do full-height layouts.
+html,
+body {
+  height: 100%;
+}
+
+
+
 // Give the anchor a nicer default color and remove the default underline
 // only to be revealed when the anchor is hovered/focused/activated.
 a {

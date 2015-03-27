@@ -1,31 +1,3 @@
-@import 'assets/components/header/header';
-
-
-html,
-body,
-body > .lab-root {
-  height: 100%;
-}
-
-
-
-.add--scrollable {
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-}
-
-
-
-.lab-body {
-  position: absolute;
-  top: 50px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-
-
 .lab-content {
   padding: 10px 20px;
 }

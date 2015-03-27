@@ -2,21 +2,24 @@ define(function(require) {
 
   'use strict';
 
-  var React        = require('react')
-  var RouteHandler = require('react-router').RouteHandler
+  var React              = require('react')
+  var RouteHandler       = require('react-router').RouteHandler
 
-  var Header       = require('../components/header/header')
+  var NavBar = require('../nav-bar/nav-bar')
+  var TabBar = require('../tab-bar/tab-bar')
 
   var App = React.createClass({
     render() {
       return (
-        <div className='lab-root'>
-          <Header />
-          <div className='lab-body add--scrollable'>
+        <div className='app'>
+          <header className='app_nav'>
+            <NavBar />
+          </header>
+          <main className='app_body'>
             <RouteHandler />
-          </div>
-          <footer>
-            <div>&copy; 2015</div>
+          </main>
+          <footer className='app_tabs'>
+            <TabBar />
           </footer>
         </div>
       )
