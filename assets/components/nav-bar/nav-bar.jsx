@@ -116,8 +116,8 @@ define(function(require) {
             style={imageStyles}
             src='/assets/graphics/logo.png'
             alt='PumpUp Lab'
-            width='180'
-            height='28'
+            width='154'
+            height='24'
           />
         </span>
       )
@@ -142,7 +142,7 @@ define(function(require) {
         <a
           onClick={alert.bind(null, 'hello')}
           className='nav-bar_button'>
-          Right
+          Dummy
         </a>
       )
     },

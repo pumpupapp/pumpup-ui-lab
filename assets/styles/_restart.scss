@@ -55,6 +55,17 @@ body {
 
 
 
+// [1] Prevent native callouts to copy image, etc when holding a tap
+// [2] Prevent copy/paste
+// [3] Prevent links/buttons from getting a tap overlay
+body {
+  -webkit-touch-callout: none; /* [1] */
+  -webkit-user-select: none; /* [2] */
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /* [3] */
+}
+
+
+
 // Give the anchor a nicer default color and remove the default underline
 // only to be revealed when the anchor is hovered/focused/activated.
 a {

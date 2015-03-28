@@ -1,1 +1,17 @@
-.tab-bar {}
+@import 'assets/variables/spaces';
+@import 'assets/placeholders/layouts';
+
+.tab-bar {
+  display: flex;
+  height: $height--tab-bar;
+  border-top: 1px solid #ccc;
+}
+
+  .tab-bar_item {
+    position: relative;
+    flex-grow: 1;
+  }
+
+    .tab-bar_icon {
+      @extend %fully-centered;
+    }

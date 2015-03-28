@@ -2,13 +2,13 @@
 @import 'assets/variables/font-sizes';
 @import 'assets/variables/spaces';
 @import 'assets/animations/fade-in';
+@import 'assets/placeholders/layouts';
 
 .nav-bar {
-  background: $color-background--brand;
-  color: $color-text--invert;
-  height: $height--nav-bar;
   display: flex;
-  text-align: center;
+  height: $height--nav-bar;
+  color: $color-text--invert;
+  background: $color-background--brand;
 }
 
   .nav-bar_item {
@@ -20,41 +20,32 @@
     width: 60%;
   }
 
-  %fully-centered {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    .nav-bar_title {
+      @extend %fully-centered;
+      margin: 0;
+      font-size: $font-size--nav-title;
+      font-weight: 200;
+      line-height: 1;
+    }
 
-  .nav-bar_title {
-    margin: 0;
-    font-size: $font-size--heading-smallest;
-    font-weight: 200;
-    line-height: 1;
-    @extend %fully-centered;
-  }
+    // Add some spacing to visually center the text and logo
+    .nav-bar_title:not(.nav-bar_title--logo) {
+      padding-bottom: 2px;
+    }
+    .nav-bar_title--logo {
+      padding-top: 2px;
+    }
 
-  // Add some spacing to visually center the text
-  .nav-bar_title:not(.nav-bar_title--logo) {
-    padding-bottom: 2px;
-  }
-
-  .nav-bar_title--logo {
-  }
-
-  .nav-bar_button {
-    color: $color-text--invert;
-    @extend %fully-centered;
-  }
-  .nav-bar_button:hover,
-  .nav-bar_button:focus,
-  .nav-bar_button:active {
-    cursor: pointer;
-    color: $color-text--invert;
-    text-decoration: none;
-  }
+    .nav-bar_button {
+      @extend %fully-centered;
+      color: $color-text--invert;
+      font-size: $font-size--nav-button;
+      padding-bottom: 2px;
+    }
+    .nav-bar_button:hover,
+    .nav-bar_button:focus,
+    .nav-bar_button:active {
+      cursor: pointer;
+      color: $color-text--invert;
+      text-decoration: none;
+    }
