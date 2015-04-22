@@ -9,7 +9,7 @@
   "devDependencies": {
     "chokidar": "^1.0.0-rc3",
     "connect": "^3.3.4",
-    "connect-jsx": "^0.5.1",
+    "connect-jsx": "^0.6.0",
     "debug": "^2.1.1",
     "node-sass-middleware": "git://github.com/sass/node-sass-middleware.git#master",
     "react-tools": "^0.12.2",
